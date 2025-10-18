@@ -1,0 +1,288 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+.profile-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+}
+
+.bio {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.stat h3 {
+  margin: 0;
+}
+
+.profile-details {
+  margin: 20px 0;
+  text-align: left;
+  padding: 15px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #762dec13, #7e5cdb2f, #00ccff80);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(118, 45, 236, 0.6),
+              0 0 25px rgba(0, 204, 255, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.profile-details h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #762dec, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile-details p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #eee;
+}
+
+
+
+.friends-section {
+  margin: 20px 0;
+}
+
+.friends-section h3 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.friends-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  height: 130px;
+  padding-left: 13px;
+  width: 100%;
+}
+
+.friend img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #444;
+}
+
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  border-top: 1px solid #333;
+  z-index: 4;
+  margin-bottom: 0;
+}
+
+.bottom-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-nav a span {
+  font-size: 0.7rem;
+  margin-top: 2px;
+  color: #aaa;
+}
+
+
+.plus-btn {
+  background: #762dec;
+  color: #fff !important;
+  font-size: 1.8rem !important;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  z-index: 5;
+}
+
+.friend {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  transition: transform 0.3s ease;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.friend:hover {
+  transform: scale(1.1);
+}
+/* Spinning gradient border */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.friend::after,
+.friend::before {
+  --angle: 0deg;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #7b25cc73,
+    #7b30d1,
+    #2260e6,
+    #00ccff,
+    #6d23b3
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 0;
+  padding: 2px; /* border thickness */
+  animation: spin 6s linear infinite; /* speed of spin */
+}
+
+.friend::before {
+  filter: blur(8px); /* glowing blur around */
+}
+
+/* Profile image sits on top */
+.friend img {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Spin animation */
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+.friend-name {
+  font-size: 13px;
+  color: #ddd;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: none;
+}
+.container-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.videos-section {
+  margin-bottom: 80px;
+  text-align: left;
+  margin-top: 0;
+  
+}
+
+.videos-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #762dec, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 8px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.video-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: none; 
+  border: none;     
+  box-shadow: none; 
+  display: flex;    
+}
+
+.video-card iframe,
+.video-card video {
+  width: 100%;
+  aspect-ratio: 9 / 16;  
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  height: auto;  
+}
+.qr-code {
+  position: relative;   
+  top: 30px;
+  left: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  transition: transform .3s ease;
+}
+.qr-code:hover {
+  transform: scale(1.1);
+}
+
+.qr-code img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  filter: invert(100%);
+}
