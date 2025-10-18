@@ -4,6 +4,7 @@ import {isaacProfile, aghatiseProfile} from "./profilesCollection.js"
 
 export function isaacFunc() {
     let profileHTML = '';
+    
 
     isaacProfile.forEach((accoutInfo) => {
         const name = accoutInfo.name;
@@ -156,6 +157,9 @@ export function isaacFunc() {
             `;
             });
         ;
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('this');
+        });
         document.getElementById('profileHtml-js').innerHTML = profileHTML;
     }
    
@@ -316,10 +320,14 @@ export function isaacFunc() {
         document.getElementById('profileHtml-js').innerHTML = profileHTML;
     }
     
-   export const userEmail = localStorage.getItem('loggedInUser');
-    console.log(userEmail);
+   export function getUserEmail() {
+    return localStorage.getItem('loggedInUser');
+   }
     
+
     document.addEventListener('DOMContentLoaded', () => {
+        const userEmail = getUserEmail();
+        console.log(userEmail);
         if (userEmail === 'praiseoverah@gmail.com') {
         isaacFunc();
     } else if (userEmail === 'aghatise@gmail.com') {
