@@ -1,5 +1,5 @@
 import { chatMessageAghatise, chatMessageIsaac } from "./chatSec.js";
-import { userEmail } from "../Accounts/PROFILES/profiles.js";
+import {  getUserEmail,  } from "../Accounts/PROFILES/profiles.js";
 
 function aghatiseMessagePage() {
     let chatMessageHTML = '';
@@ -53,13 +53,14 @@ chatMessageIsaac.forEach((chatInfo) => {
         ${unreadMessages}
         </div>
     </div>
+    <div style = "display: none;" id = "profileHtml-js"></div>
     `;
     document.getElementById('messages-js').innerHTML = chatMessageHTML;
 });
 }
-
-if (userEmail === 'praiseoverah@gmail.com') {
+    const userEmails = getUserEmail();
+if (userEmails === 'praiseoverah@gmail.com') {
     isaacMessagePage();
-} else if (userEmail === 'aghatise@gmail.com') {
+} else if (userEmails === 'aghatise@gmail.com') {
     aghatiseMessagePage();
 }
