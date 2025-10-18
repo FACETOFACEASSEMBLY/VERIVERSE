@@ -132,7 +132,7 @@ export function isaacFunc() {
 
     <!-- Bottom Navigation -->
   <div class="bottom-nav">
-    <a href="#" class="active">👤<span>Profile</span></a>
+   <a href="/LOGINS/Accounts/praiseoverah@gmail.com-profile.html" class="active">👤<span>Profile</span></a>
     <a href="#">🎥<span>Reels</span></a>
     
    
@@ -147,7 +147,7 @@ export function isaacFunc() {
     </a>
     
     <a href="#">📝<span>Posts</span></a>
-    <a href="#">💬<span>Messages</span></a>
+    <a href="../MESSAGES/messages.html">💬<span>Messages</span></a>
   </div>
 
    <script src="PROFILES/profiles.js" type="module"></script>
@@ -304,7 +304,7 @@ export function isaacFunc() {
     </a>
     
     <a href="#">📝<span>Posts</span></a>
-    <a href="#">💬<span>Messages</span></a>
+    <a href="../MESSAGES/messages.html">💬<span>Messages</span></a>
   </div>
 
    <script src="PROFILES/profiles.js" type="module"></script>
@@ -316,11 +316,15 @@ export function isaacFunc() {
         document.getElementById('profileHtml-js').innerHTML = profileHTML;
     }
     
-    const userEmail = localStorage.getItem('loggedInUser');
+   export const userEmail = localStorage.getItem('loggedInUser');
     console.log(userEmail);
-    if (userEmail === 'praiseoverah@gmail.com') {
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        if (userEmail === 'praiseoverah@gmail.com') {
         isaacFunc();
     } else if (userEmail === 'aghatise@gmail.com') {
         aghatiseFunc();
     }
+    });
+    
 
