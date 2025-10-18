@@ -1,8 +1,16 @@
+html {
+  overflow-x: hidden; 
+  scrollbar-width: none; 
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #111;
   color: #fff;
+  overflow-x: hidden; 
 }
 
 .profile-container {
@@ -83,6 +91,10 @@ body {
   height: 130px;
   padding-left: 13px;
   width: 100%;
+  scrollbar-width: none;
+}
+.friends-list::-webkit-scrollbar {
+  display: none; 
 }
 
 .friend img {
